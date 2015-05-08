@@ -44,7 +44,7 @@ module.exports = function(app, express){
     req.logout();
     res.redirect('/signin.html');
   });
-  app.get('/auth/twitter', passport.authenticate('twitter'));
+  app.get('/auth/twitter', passport.authenticate('twitter', {forceLogin: true}));
   // app.get('/auth/facebook', passport.authenticate('facebook'));
   app.get('/auth/twitter/callback', passport.authenticate('twitter',
     { successRedirect: '/', failureRedirect: '/login' }
