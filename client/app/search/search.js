@@ -5,6 +5,7 @@ angular.module('socialStock.search', [])
     clientFactory.getTwitterInfo(term).then(function(data){
       $scope.stocks = [data.data];
       console.log($scope.stocks);
+      $scope.searchTerm = '';
     });
   };
   $scope.buyStock = function(shares){
@@ -18,7 +19,7 @@ angular.module('socialStock.search', [])
       "shares": +shares
     };
     clientFactory.buyStock(purchase).then(function(data){
-      console.log(data);
     });
+    $scope.shares = '';
   }
 });

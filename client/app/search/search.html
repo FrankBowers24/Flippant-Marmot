@@ -1,25 +1,26 @@
 <div id='search'>
   <form>
     <button ng-click='search(searchTerm)'>search</button>
-    <input type='text' ng-model='searchTerm'>
+    <input type='text' ng-model='searchTerm' placeholder='Input Twitter Handle'>
   </form>
 </div>
-<div id='headers'>
+<div id='searchheaders'>
   <div>STOCK</div>
   <div>FOLLOWERS</div>
   <div>SHARE PRICE</div>
+  <div>BUY</div>
 </div>
 <div id='stocks'>
-  <div class='stock parent' ng-repeat='stock in stocks'>
-    <div class='name'>
-      <div class='username'>{{ stock.name }}</div>
+  <div class='stock parent search' ng-repeat='stock in stocks'>
+    <div class='searchwidth'>
+      <div class='medium'>{{ stock.name }}</div>
       <div class='handle'>@{{ stock.screen_name }}</div>
     </div>
-    <div class='followers'>{{ stock.follower_count_at_query_time }}</div>
-    <div class='shareprice'>{{ stock.price_at_purchase }}</div>
-    <div class='buttons'>
-      <input ng-model='shares'>
+    <div class='searchwidth'>{{ stock.follower_count_at_query_time }}</div>
+    <div class='searchwidth'>{{ stock.price_at_purchase }}</div>
+    <div class='searchwidth'>
       <button ng-click='buyStock(shares)'>BUY</button>
+      <input ng-model='shares' placeholder='shares'>
     </div>
   </div>
 </div>

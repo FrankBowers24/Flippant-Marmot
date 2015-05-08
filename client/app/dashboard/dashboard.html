@@ -1,23 +1,29 @@
 <div id='info'>
-  <div class='networth thick'>NET WORTH {{ networth | number:2 }}</div>
-  <div id='cash'>CASH BALANCE {{portfolio.cash_balance | number:2}}</div>
+  <div class='networth thick'>NET WORTH <span class='right'>{{ networth | number:2 }}</span></div>
+  <div id='cash'>CASH BALANCE <span class='right'>{{portfolio.cash_balance | number:2}}</span></div>
 </div>
-<div id='headers'>
+<div id='dashheaders'>
   <div>STOCK</div>
+  <div>SHARES</div>
+  <div>SHARE PRICE</div>
+  <div>GAIN/LOSS</div>
+  <div>STOCK</div>
+  <div>SELL</div>
 </div>
 <div id='stocks'>
-  <div class='stock parent' ng-repeat='stock in portfolio.stocks'>
-    <div class='name'>
-      <div class='username'>{{ stock.name }}</div>
-      <div class='handle'>{{ stock.screen_name }}</div>
-    </div>
-    <div class='shares'>{{ stock.shares }}</div>
-    <div class='shareprice'>{{ stock.current_price | number:2 }}</div>
-    <div class='totalvalue'>{{ stock.current_price * stock.shares | number: 2}}</div>
-    <div class='delta'>{{ (stock.current_price - (stock.follower_count_at_purchase/1000000)) * stock.shares |number:2}}</div>
-    <div class='buttons'>
-      <button>BUY</button>
-      <button ng-click="createAndSell(stock.screen_name, stock.name, stock.current_follower_count, stock.current_date, stock.current_price, stock.shares)">SELL</button>
+  <div ng-repeat='stock in portfolio.stocks'>
+    <div class='stock parent'>
+      <div class='dashwidth'>
+        <div class='medium'>{{ stock.name }}</div>
+        <div>{{ stock.screen_name }}</div>
+      </div>
+      <div class='dashwidth'>{{ stock.shares }}</div>
+      <div class='dashwidth'>{{ stock.current_price | number:2 }}</div>
+      <div class='dashwidth'>{{ stock.current_price * stock.shares | number: 2}}</div>
+      <div class='dashwidth'>{{ (stock.current_price - (stock.follower_count_at_purchase/1000000)) * stock.shares |number:2}}</div>
+      <div class='dashwidth'>
+        <button ng-click="createAndSell(stock.screen_name, stock.name, stock.current_follower_count, stock.current_date, stock.current_price, stock.shares)">SELL</button>
+      </div>
     </div>
   </div>
 </div>
