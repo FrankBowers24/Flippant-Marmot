@@ -19,8 +19,8 @@ var pieConfig = {
 	"size": {
 		"canvasHeight": 600,
 		"canvasWidth": 800,
-		"pieInnerRadius": "33%",
-		"pieOuterRadius": "90%"
+		"pieInnerRadius": "20%",
+		"pieOuterRadius": "70%"
 	},
 	"data": {
 		"sortOrder": "value-desc",
@@ -42,10 +42,10 @@ var pieConfig = {
 		},
 		"inner": {
 			"hideWhenLessThanPercentage": 3,
-			"fontSize": 16
+			"fontSize": 24
 		},
 		"mainLabel": {
-			"fontSize": 18
+			"fontSize":18
 		},
 		"percentage": {
 			"color": "#ffffff",
@@ -72,13 +72,13 @@ var pieConfig = {
 		"pullOutSegmentOnClick": {
 			"effect": "linear",
 			"speed": 400,
-			"size": 8
+			"size": 16
 		}
 	},
 	"misc": {
 		"gradient": {
 			"enabled": true,
-			"percentage": 100
+			"percentage": 60
 		}
 	}
 };
