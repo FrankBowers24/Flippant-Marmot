@@ -17,8 +17,8 @@ var pieConfig = {
 		"location": "bottom-left"
 	},
 	"size": {
-		"canvasHeight": 600,
-		"canvasWidth": 800,
+		"canvasHeight": 400,
+		"canvasWidth": 500,
 		"pieInnerRadius": "20%",
 		"pieOuterRadius": "70%"
 	},
@@ -42,19 +42,19 @@ var pieConfig = {
 		},
 		"inner": {
 			"hideWhenLessThanPercentage": 3,
-			"fontSize": 24
+			"fontSize": 18
 		},
 		"mainLabel": {
-			"fontSize":18
+			"fontSize":12
 		},
 		"percentage": {
 			"color": "#ffffff",
-			"fontSize": 18,
+			"fontSize": 12,
 			"decimalPlaces": 0
 		},
 		"value": {
 			"color": "#adadad",
-			"fontSize": 18
+			"fontSize": 12
 		},
 		"lines": {
 			"enabled": true
